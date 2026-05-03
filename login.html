@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Spotify Clone</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo">
+                <i class="fa-brands fa-spotify"></i>
+                <span>Spotify</span>
+            </div>
+            <h2>Log in to Spotify Clone</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Email or username</label>
+                    <input type="text" id="username" placeholder="Email or username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="login-btn">Log In</button>
+            </form>
+            <p class="signup-text">Don't have an account? <a href="#">Sign up for Spotify</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Mock login logic
+            localStorage.setItem('spotify_logged_in', 'true');
+            window.location.href = 'index.html';
+        });
+
+        // Redirect if already logged in
+        if (localStorage.getItem('spotify_logged_in') === 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
